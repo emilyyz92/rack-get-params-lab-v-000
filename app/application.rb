@@ -26,6 +26,9 @@ class Application
       if @@items.include?(reg.params["item"])
         @@cart << req.params["item"]
         resp.write "added #{reg.params["item"]}"
+      else
+        resp.write "We don't have that item"
+      end
     else
       resp.write "Path Not Found"
     end
